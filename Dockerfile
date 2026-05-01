@@ -1,9 +1,9 @@
-FROM openjdk:21
+FROM eclipse-temurin:21-jdk
 
 WORKDIR /github-cicd-actions
 
-COPY . .
+COPY target/springboot-cicd-git-actions.jar app.jar
 
 EXPOSE 8080
 
-ENTRYPOINT ["java", "-jar", "springboot-cicd-git-actions.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
